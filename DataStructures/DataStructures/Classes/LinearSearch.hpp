@@ -10,16 +10,15 @@
 
 #include <stdio.h>
 #include <iostream>
+#include "SearchEngine.hpp"
+
 using namespace std;
-class LinearSearch
+class LinearSearch: public SearchEngine
 {
-private:
-    int *elements;
-    int elementsCount;
 public:
-    LinearSearch(int count);
+    void initialize(int count);
+    int search(int value);
     ~LinearSearch();
-    int findValue(int value);
 
 };
 

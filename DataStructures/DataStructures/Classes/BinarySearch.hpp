@@ -8,18 +8,15 @@
 #ifndef BinarySearch_hpp
 #define BinarySearch_hpp
 
+#include "SearchEngine.hpp"
 #include <stdio.h>
 
-class BinarySearch
+class BinarySearch : public SearchEngine
 {
-private:
-    int *elements;
-    int elementsCount;
-    void getStartAndEndIndex(int midIndex, int &startIndex, int &endIndex);
 public:
-    BinarySearch(int count);
+    void initialize(int count);
+    int search(int value);
     ~BinarySearch();
-    int findIndex(int value);
 };
 
 #endif /* BinarySearch_hpp */

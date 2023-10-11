@@ -6,6 +6,7 @@
 //
 
 #include <iostream>
+#include "Classes/SearchEngine.hpp"
 #include "Classes/LinearSearch.hpp"
 #include "Classes/BinarySearch.hpp"
 
@@ -17,55 +18,43 @@ int main(int argc, const char * argv[]) {
     cout << "Select algorithm: " << endl;
     cout << "1: Linear Search" << endl;
     cout << "2: Binary Search" << endl;
-    
     cin >> selector;
     
-    switch (selector) {
+    SearchEngine *searcher = NULL;
+    
+    switch (selector) 
+    {
         case 1:
         {
             int count;
             cout << "Linear Search chosen" << endl;
-            cout << "Enter elements count: ";
-            cin >> count;
-            LinearSearch *lSearch = new LinearSearch(count);
-            cout << "Enter value to find the index:";
-            int value;
-            cin >> value;
-            int index = lSearch->findValue(value);
-            if(index != -1)
-            {
-                cout << "Value found at index: " << index << endl;
-            }
-            else
-            {
-                cout << "Value not found!" << endl;
-            }
-            
-        }
+            searcher = new LinearSearch();
             break;
+        }
         case 2:
         {
             int count;
             cout << "Binary Search chosen" << endl;
-            cout << "Enter elements count: ";
-            cin >> count;
-            BinarySearch *bSearch = new BinarySearch(count);
-            cout << "Enter value to find the index:";
-            int value;
-            cin >> value;
-            int index = bSearch->findIndex(value);
-            if(index != -1)
-            {
-                cout << "Value found at index: " << index << endl;
-            }
-            else
-            {
-                cout << "Value not found!" << endl;
-            }
-        }
-            
-        default:
+            searcher = new BinarySearch();
             break;
+        }
+        default: break;
+    }
+    int count;
+    cout << "Enter elements count: ";
+    cin >> count;
+    searcher->initialize(count);
+    int value;
+    cout << "Enter value to search:";
+    cin >> value;
+    int result = searcher->search(value);
+    if(result != -1)
+    {
+        cout << "Value found at index " << result << endl;
+    }
+    else
+    {
+        cout << "Value not found!" << endl;
     }
     
     return 0;

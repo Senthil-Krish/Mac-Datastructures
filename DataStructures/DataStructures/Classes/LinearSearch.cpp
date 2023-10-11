@@ -7,7 +7,7 @@
 
 #include "LinearSearch.hpp"
 
-LinearSearch::LinearSearch(int count)
+void LinearSearch::initialize(int count)
 {
     elementsCount = count;
     elements = new int[elementsCount];
@@ -16,14 +16,10 @@ LinearSearch::LinearSearch(int count)
         cout << "Enter value for index " << i << ":";
         cin >> elements[i];
     }
+    
 }
 
-LinearSearch::~LinearSearch()
-{
-    delete [] elements;
-}
-
-int LinearSearch::findValue(int value)
+int LinearSearch::search(int value)
 {
     for(int i = 0; i < elementsCount; i++)
     {
@@ -32,5 +28,11 @@ int LinearSearch::findValue(int value)
             return i;
         }
     }
-    return - 1;
+    return -1;
 }
+
+LinearSearch::~LinearSearch()
+{
+    delete [] elements;
+}
+
