@@ -9,6 +9,7 @@
 #include "Classes/SearchEngine.hpp"
 #include "Classes/LinearSearch.hpp"
 #include "Classes/BinarySearch.hpp"
+#include "Classes/BinaryRecursiveSearch.hpp"
 
 using namespace std;
 int main(int argc, const char * argv[]) {
@@ -18,6 +19,7 @@ int main(int argc, const char * argv[]) {
     cout << "Select algorithm: " << endl;
     cout << "1: Linear Search" << endl;
     cout << "2: Binary Search" << endl;
+    cout << "3: Binary Recursive Search" << endl;
     cin >> selector;
     
     SearchEngine *searcher = NULL;
@@ -26,17 +28,22 @@ int main(int argc, const char * argv[]) {
     {
         case 1:
         {
-            int count;
             cout << "Linear Search chosen" << endl;
             searcher = new LinearSearch();
             break;
         }
         case 2:
         {
-            int count;
             cout << "Binary Search chosen" << endl;
             searcher = new BinarySearch();
             break;
+        }
+        case 3:
+        {
+            cout << "Binary Recursive Search chosen" << endl;
+            searcher = new BinaryRecursiveSearch();
+            break;
+
         }
         default: break;
     }

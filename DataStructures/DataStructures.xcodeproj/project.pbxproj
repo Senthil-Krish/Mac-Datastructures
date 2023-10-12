@@ -11,6 +11,7 @@
 		8DDAC6332AD25FC700DFEBC7 /* LinearSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6312AD25FC700DFEBC7 /* LinearSearch.cpp */; };
 		8DDAC6362AD2722B00DFEBC7 /* BinarySearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6342AD2722B00DFEBC7 /* BinarySearch.cpp */; };
 		8DDAC6392AD65DEC00DFEBC7 /* SearchEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6372AD65DEC00DFEBC7 /* SearchEngine.cpp */; };
+		8DDAC63C2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC63A2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		8DDAC6352AD2722B00DFEBC7 /* BinarySearch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinarySearch.hpp; sourceTree = "<group>"; };
 		8DDAC6372AD65DEC00DFEBC7 /* SearchEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SearchEngine.cpp; sourceTree = "<group>"; };
 		8DDAC6382AD65DEC00DFEBC7 /* SearchEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SearchEngine.hpp; sourceTree = "<group>"; };
+		8DDAC63A2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BinaryRecursiveSearch.cpp; sourceTree = "<group>"; };
+		8DDAC63B2AD7B04400DFEBC7 /* BinaryRecursiveSearch.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BinaryRecursiveSearch.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +84,8 @@
 				8DDAC6352AD2722B00DFEBC7 /* BinarySearch.hpp */,
 				8DDAC6372AD65DEC00DFEBC7 /* SearchEngine.cpp */,
 				8DDAC6382AD65DEC00DFEBC7 /* SearchEngine.hpp */,
+				8DDAC63A2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp */,
+				8DDAC63B2AD7B04400DFEBC7 /* BinaryRecursiveSearch.hpp */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -145,6 +150,7 @@
 				8DDAC6332AD25FC700DFEBC7 /* LinearSearch.cpp in Sources */,
 				8DDAC6392AD65DEC00DFEBC7 /* SearchEngine.cpp in Sources */,
 				8DDAC6362AD2722B00DFEBC7 /* BinarySearch.cpp in Sources */,
+				8DDAC63C2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp in Sources */,
 				8D5290622AD12B350093A5FA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
