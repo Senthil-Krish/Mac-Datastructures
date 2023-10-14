@@ -6,63 +6,42 @@
 //
 
 #include <iostream>
-#include "Classes/SearchEngine.hpp"
-#include "Classes/LinearSearch.hpp"
-#include "Classes/BinarySearch.hpp"
-#include "Classes/BinaryRecursiveSearch.hpp"
+#include "Classes/SinglyLinkedList.hpp"
+#include "Classes/SearchCabinate.hpp"
 
 using namespace std;
 int main(int argc, const char * argv[]) {
     // insert code here...
     std::cout << "Hello, Dastructures and Algorithms!\n";
     int selector;
-    cout << "Select algorithm: " << endl;
-    cout << "1: Linear Search" << endl;
-    cout << "2: Binary Search" << endl;
-    cout << "3: Binary Recursive Search" << endl;
+    cout << "Select type: " << endl;
+    cout << "1. Search algorithms" << endl;
+    cout << "2. Lists" << endl;
     cin >> selector;
-    
-    SearchEngine *searcher = NULL;
     
     switch (selector) 
     {
         case 1:
         {
-            cout << "Linear Search chosen" << endl;
-            searcher = new LinearSearch();
+            cout << "Search Algorithms chosen" << endl;
+            SearchCabinate cabinate;
+            cabinate.searchOption();
             break;
         }
         case 2:
         {
-            cout << "Binary Search chosen" << endl;
-            searcher = new BinarySearch();
+            cout << "Lists chosen" << endl;
+            SinglyLinkedList *list = new SinglyLinkedList();
+            for(int i = 0; i < 5; i++)
+            {
+                list->addAtLast(i * 5);
+            }
+            
+            list->print();
             break;
-        }
-        case 3:
-        {
-            cout << "Binary Recursive Search chosen" << endl;
-            searcher = new BinaryRecursiveSearch();
-            break;
-
         }
         default: break;
     }
-    int count;
-    cout << "Enter elements count: ";
-    cin >> count;
-    searcher->initialize(count);
-    int value;
-    cout << "Enter value to search:";
-    cin >> value;
-    int result = searcher->search(value);
-    if(result != -1)
-    {
-        cout << "Value found at index " << result << endl;
-    }
-    else
-    {
-        cout << "Value not found!" << endl;
-    }
-    
+
     return 0;
 }
