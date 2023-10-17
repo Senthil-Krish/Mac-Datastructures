@@ -6,8 +6,8 @@
 //
 
 #include <iostream>
-#include "Classes/SinglyLinkedList.hpp"
 #include "Classes/SearchCabinate.hpp"
+#include "Classes/ListCabinate.hpp"
 
 using namespace std;
 int main(int argc, const char * argv[]) {
@@ -31,13 +31,8 @@ int main(int argc, const char * argv[]) {
         case 2:
         {
             cout << "Lists chosen" << endl;
-            SinglyLinkedList *list = new SinglyLinkedList();
-            for(int i = 0; i < 5; i++)
-            {
-                list->addAtLast(i * 5);
-            }
-            
-            list->print();
+            ListCabinate lCab;
+            lCab.enterIntoListWorld();
             break;
         }
         default: break;

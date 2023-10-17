@@ -45,6 +45,37 @@ void SinglyLinkedList::addAtLast(int data)
 }
 void SinglyLinkedList::addAtIndex(int index, int data)
 {
+    if(head == NULL)
+    {
+        head = new SinglyLinkedList();
+        head->data = data;
+        head->next = NULL;
+        return;
+    }
+    else if(index == 0)
+    {
+        Node *newNode = new Node();
+        newNode->data = data;
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
+    Node *current = head;
+    
+    int counter = 0;
+    do
+    {
+        if(counter == (index - 1))
+        {
+            Node *newNode = new Node();
+            newNode->data = data;
+            newNode->next = current->next;
+            current->next = newNode;
+            return;
+        }
+        current = current->next;
+        counter++;
+    }while(current != NULL);
     
 }
 
@@ -72,6 +103,6 @@ void SinglyLinkedList::print()
             std::cout << "Value at index " << index << ": " << current->data << std::endl;
             current = current->next;
             index++;
-        }while(current->next != NULL);
+        }while(current != NULL);
     }
 }
