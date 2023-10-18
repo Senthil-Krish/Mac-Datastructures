@@ -21,6 +21,8 @@ public:
     void removeAtLast();
     void removeAtIndex(int index);
     
+    int findValue(int value);
+    
     void print();
 };
 

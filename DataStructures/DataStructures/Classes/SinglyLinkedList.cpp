@@ -168,6 +168,25 @@ void SinglyLinkedList::removeAtIndex(int index)
 
 }
 
+int SinglyLinkedList::findValue(int value)
+{
+    int counter = 0;
+    
+    Node *currentNode = head;
+    
+    while (currentNode != NULL) {
+        if(currentNode->data == value)
+        {
+            return counter;
+        }
+        currentNode = currentNode->next;
+        counter++;
+    }
+    
+    return -1;
+}
+                            
+
 void SinglyLinkedList::print()
 {
     Node *current = head;

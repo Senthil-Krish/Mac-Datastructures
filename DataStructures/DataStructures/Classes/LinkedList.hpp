@@ -34,6 +34,8 @@ public:
     virtual void removeAtLast() = 0;
     virtual void removeAtIndex(int index) = 0;
     
+    virtual int findValue(int value) = 0;
+    
     virtual void print() = 0;
     
 };

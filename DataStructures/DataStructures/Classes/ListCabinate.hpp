@@ -48,6 +48,7 @@ public:
             cout << "5. Remove last" << endl;
             cout << "6. Remove at index" << endl;
             cout << "7. Print" << endl;
+            cout << "8. Find" << endl;
             cout << "0. Quit" << endl;
             cin >> operation;
 
@@ -110,6 +111,22 @@ public:
                 case 7:
                 {
                     lList->print();
+                    break;
+                }
+                case 8:
+                {
+                    int value;
+                    cout << "Enter value to find:";
+                    cin >> value;
+                    int index = lList->findValue(value);
+                    if(index != -1)
+                    {
+                        cout << "Value found at index: " << index << endl;
+                    }
+                    else
+                    {
+                        cout << "Value not found!" << endl;
+                    }
                     break;
                 }
                 default:
