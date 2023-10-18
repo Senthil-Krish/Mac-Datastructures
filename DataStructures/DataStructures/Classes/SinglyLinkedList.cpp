@@ -71,6 +71,12 @@ void SinglyLinkedList::addAtIndex(int index, int data)
             newNode->data = data;
             newNode->next = current->next;
             current->next = newNode;
+            
+            if(newNode->next == NULL)
+            {
+                tail = newNode;
+            }
+            
             return;
         }
         current = current->next;
@@ -81,15 +87,85 @@ void SinglyLinkedList::addAtIndex(int index, int data)
 
 void SinglyLinkedList::removeAtFirst()
 {
-    
+    if(head != NULL)
+    {
+        Node *temp = head;
+        head = head->next;
+        delete temp;
+    }
 }
+
+
+
 void SinglyLinkedList::removeAtLast()
 {
+    if(head == NULL) return;
     
+    if(head == tail)
+    {
+        delete head;
+        head = NULL;
+        tail = NULL;
+        return;
+    }
+    
+    Node *theNode = head;
+    
+    while (theNode->next->next != NULL) {
+        theNode = theNode->next;
+    }
+    
+    delete theNode->next;
+    theNode->next = NULL;
+    tail = theNode;
 }
+
 void SinglyLinkedList::removeAtIndex(int index)
 {
+    if(head == NULL) return;
+
+    if(index == 0 && head->next == NULL)
+    {
+        delete head;
+        head = NULL;
+        tail = NULL;
+        return;
+    }
     
+    int counter = 0;
+    
+    Node *theNode = head;
+    
+    do
+    {
+        if(index == counter)
+        {
+            if(head == theNode)
+            {
+                head = theNode->next;
+                delete theNode;
+                return;
+            }
+        }
+            if((index == (counter + 1)) && (theNode->next == tail))
+            {
+                tail = theNode;
+                delete theNode->next;
+                tail->next = NULL;
+                return;
+            }
+            if(index == counter + 1)
+            {
+                Node *temp = theNode->next;
+                theNode->next = theNode->next->next;
+                delete temp;
+                return;
+            }
+            counter++;
+        theNode = theNode->next;
+        
+    }while(theNode->next != NULL);
+
 }
 
 void SinglyLinkedList::print()

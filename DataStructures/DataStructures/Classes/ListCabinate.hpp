@@ -47,6 +47,7 @@ public:
             cout << "4. Remove front" << endl;
             cout << "5. Remove last" << endl;
             cout << "6. Remove at index" << endl;
+            cout << "7. Print" << endl;
             cout << "0. Quit" << endl;
             cin >> operation;
 
@@ -86,15 +87,35 @@ public:
                     cout << "Enter value:";
                     cin >> data;
                     lList->addAtIndex(index, data);
+                    break;
+                }
+                case 4:
+                {
+                    lList->removeAtFirst();
+                    break;
+                }
+                case 5:
+                {
+                    lList->removeAtLast();
+                    break;
+                }
+                case 6:
+                {
+                    int index;
+                    cout << "Enter index:";
+                    cin >> index;
+                    lList->removeAtIndex(index);
+                    break;
+                }
+                case 7:
+                {
+                    lList->print();
+                    break;
                 }
                 default:
                     break;
             }
         }while(operation != 0);
-        
-
-        
-        lList->print();
     }
 };
 
