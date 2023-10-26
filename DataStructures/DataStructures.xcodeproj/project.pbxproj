@@ -16,6 +16,7 @@
 		8DDAC6422ADAEFA500DFEBC7 /* SinglyLinkedList.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6402ADAEFA500DFEBC7 /* SinglyLinkedList.cpp */; };
 		8DDAC6452ADAFA1500DFEBC7 /* SearchCabinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6432ADAFA1500DFEBC7 /* SearchCabinate.cpp */; };
 		8DDAC6482ADCF6E700DFEBC7 /* ListCabinate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6462ADCF6E700DFEBC7 /* ListCabinate.cpp */; };
+		8DDAC64B2AE3C38F00DFEBC7 /* MergeSort.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8DDAC6492AE3C38F00DFEBC7 /* MergeSort.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,8 @@
 		8DDAC6442ADAFA1500DFEBC7 /* SearchCabinate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SearchCabinate.hpp; sourceTree = "<group>"; };
 		8DDAC6462ADCF6E700DFEBC7 /* ListCabinate.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ListCabinate.cpp; sourceTree = "<group>"; };
 		8DDAC6472ADCF6E700DFEBC7 /* ListCabinate.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ListCabinate.hpp; sourceTree = "<group>"; };
+		8DDAC6492AE3C38F00DFEBC7 /* MergeSort.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = MergeSort.cpp; sourceTree = "<group>"; };
+		8DDAC64A2AE3C38F00DFEBC7 /* MergeSort.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MergeSort.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,8 @@
 				8DDAC6442ADAFA1500DFEBC7 /* SearchCabinate.hpp */,
 				8DDAC6462ADCF6E700DFEBC7 /* ListCabinate.cpp */,
 				8DDAC6472ADCF6E700DFEBC7 /* ListCabinate.hpp */,
+				8DDAC6492AE3C38F00DFEBC7 /* MergeSort.cpp */,
+				8DDAC64A2AE3C38F00DFEBC7 /* MergeSort.hpp */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -175,6 +180,7 @@
 				8DDAC6362AD2722B00DFEBC7 /* BinarySearch.cpp in Sources */,
 				8DDAC63C2AD7B04400DFEBC7 /* BinaryRecursiveSearch.cpp in Sources */,
 				8DDAC63F2AD91FE600DFEBC7 /* LinkedList.cpp in Sources */,
+				8DDAC64B2AE3C38F00DFEBC7 /* MergeSort.cpp in Sources */,
 				8D5290622AD12B350093A5FA /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
