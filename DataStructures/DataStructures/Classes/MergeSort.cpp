@@ -7,69 +7,69 @@
 
 #include "MergeSort.hpp"
 #include "iostream"
+using namespace std;
 
-int* Merge(int *lList, int *rList, int lCount, int rCount)
+void MergeSort::Merge(int *lList, int start, int mid, int end, int *temp)
 {
-    int totalSize = lCount + rCount;
-    int *mList = new int[totalSize];
-
-    int counter = 0;
-    int i = 0;
-    for(; i < lCount; i++)
+    int sz1 = mid + 1 - start;
+    int sz2 = end - mid;
+    
+    for(int i = 0; i < sz1; i++)
+        temp[i] = lList[i + start];
+    for(int i = 0; i < sz2; i++)
+        temp[i + sz1] = lList[i + mid + 1];
+    
+    cout << "Size: " << sz1 + sz2 << endl;
+    cout << "values: " << endl;
+    for(int i = 0; i < sz1 + sz2; i++)
     {
-        if(lList[i] <= rList[i])
+        cout << temp[i] << " ";
+    }
+    cout << endl;
+    
+    int l = 0, r = sz1, a = start;
+    
+    while(l < sz1 && r < sz1 + sz2)
+    {
+        if(temp[l] < temp[r])
         {
-            mList[counter] = lList[i];
-            mList[counter + 1] = rList[i];
+            lList[a++] = temp[l++];
         }
         else
         {
-            mList[counter] = rList[i];
-            mList[counter + 1] = lList[i];
+            lList[a++] = temp[r++];
         }
-        counter += 2;
     }
     
-    if(lCount > rCount)
-    {
-        mList[totalSize - 1] = lList[i];
-    }
-    else if(lCount < rCount)
-    {
-        mList[totalSize - 1] = rList[i];
+    while(l < sz1)
+        lList[a++] = temp[l++];
+    
+    while (r < sz1 + sz2) {
+        lList[a++] = temp[r++];
     }
     
-    //if()
-    
-    delete [] lList;
-    delete [] rList;
-    return  mList;
 }
 
-int*  Split(int *list, int start, int end)
+void MergeSort::Split(int *list, int start, int end, int *temp)
 {
-    int mid = (start + end) / 2;
-    if(mid == 0)
+    if(start >= end)
     {
-        return list;
+        return;
     }
-    int leftSize = mid;
-    int *leftList = new int[leftSize];
-    
-    int rightSize = end - mid;
-    int *rightList = new int[rightSize];
-    memcpy(leftList, list, sizeof(int) * leftSize);
-    memcpy(rightList, list + mid, sizeof(int) * rightSize);
-    
-    int *sListL = Split(leftList, 0, (leftSize));
-    int *sListR = Split(rightList, 0, (rightSize));
-    
-    return Merge(sListL, sListR, leftSize,  rightSize);
+
+    int mid = (start + end) / 2;
+
+    Split(list, start, mid , temp);
+    Split(list, mid + 1, end, temp);
+    Merge(list, start, mid, end, temp);
+
 }
 
 
 int* MergeSort::sort(int *list, int count)
 {
-    
-    return Split(list, 0, count);
+   // mList = new int[count];
+    int *temp = new int[count];
+    Split(list, 0, count - 1, temp);
+    return list;
 }

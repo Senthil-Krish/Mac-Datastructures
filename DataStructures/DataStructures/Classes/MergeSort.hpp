@@ -20,9 +20,17 @@
 
 class MergeSort
 {
-    
+    int *mList;
+    void Merge(int *lList, int start, int mid, int end, int *temp);
+    void  Split(int *list, int start, int end, int *temp);
 public:
+    MergeSort()
+    {
+        mList = NULL;
+    }
     int* sort(int* list, int count);
+    
+
 };
 
 #endif /* MergeSort_hpp */
